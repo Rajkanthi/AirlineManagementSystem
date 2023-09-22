@@ -33,7 +33,7 @@ public class LoginController {
 
 	@GetMapping("/AirlineSystem")
 	public String Home() {
-		return "Index";
+		return "index";
 	}
 	
 	@GetMapping("/admin")
