@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fare Amount Details</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+
+</head>
+<body class="bg-success">
+	<div class="container col-4 bg-light p-2" >
+		<h2 class="m-3">Fare Amount List</h2>
+		<a th:href="@{/addFareAmount}" class="btn btn-primary m-2">Add Fare Amount</a>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Amount</th>
+					<th>Currency</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fare : ${farelist}">
+					<td th:text="${fare.amount}"></td>
+					<td th:text="${fare.currency}"></td>
+					<td>
+						<a th:href="@{/htmlUpdateFarelinkButton(fareId=${fare.fareId})}" class="badge-pill badge-warning ">Update</a>
+						<a th:href="@{/htmlDeleteFarelinkButton(fareId=${fare.fareId})}" class="badge-pill badge-danger ">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<a th:href="@{/backhtmlAdminPageaction}" class="badge badge-pill badge-success p-2">Back to Administrator List</a>
+	</div>
+
+</body>
+</html>

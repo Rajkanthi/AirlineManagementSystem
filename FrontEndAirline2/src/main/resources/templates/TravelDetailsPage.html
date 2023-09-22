@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+</head>
+<body>
+	<div class="container col-10">
+		<h2 class="text-center">Flight Travel list</h2>
+		<a th:href="@{/addFlightTravel}" class="btn btn-primary m-2 float-right">Add new travel</a>
+		<table class="table table-striped">
+			<thead >
+				<tr>
+					<th>Id</th>
+					<th>Current Location</th>
+					<th>Destination</th>
+					<th>Flight Date</th>
+					<th>Flight Number</th>
+					<th>Flight Time</th>
+					<th>Amount Id</th>
+					<th>Flight Info Id</th>
+					<th>Inventory Id</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="flight: ${flightlist}">
+					<td th:text="${flight.flightId}"></td>
+					<td th:text="${flight.currentLocation}"></td>
+					<td th:text="${flight.destination}"></td>
+					<td th:text="${flight.flightDate}"></td>
+					<td th:text="${flight.flightNumber}"></td>
+					<td th:text="${flight.flightTime}"></td>
+					<td th:text="${flight.fareId}"></td>
+					<td th:text="${flight.flightinfoId}"></td>
+					<td th:text="${flight.inventoryId}"></td>
+					<td >
+						<a th:href="@{/htmlUpdateTravellinkButton(flightId=${flight.flightId})}"
+						class="badge-pill badge-success">Update</a>
+						
+						<a th:href="@{/htmlDeleteTravellinkButton(flightId=${flight.flightId})}"
+						class="badge-pill badge-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/backhtmlAdminPageaction}" class="badge badge-pill badge-success p-2">Back to Administrator List</a>
+	</div>
+
+</body>
+</html>

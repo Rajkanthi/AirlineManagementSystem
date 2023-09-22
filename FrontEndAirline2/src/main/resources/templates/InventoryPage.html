@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+</head>
+<body>
+	<div class="container col-5">
+	<h2>Inventory list </h2>
+	<a th:href="@{/addInventory}" class="btn btn-primary ml-5 m-2">Add new Inventory</a>
+ 	<table class="table table-striped">
+ 	<thead>
+ 	<tr>
+ 		<th>InventoryId</th>
+ 		<th>Count</th>
+ 		<th>Action</th>
+ 	</tr>
+ 	</thead>
+ 	<tbody>
+ 	<tr th:each="inventory : ${inventorylist}">
+ 		<td th:text="${inventory.inventoryId}"></td>
+ 		<td th:text="${inventory.count}"></td>
+ 		<td>
+ 			<a th:href="@{/htmlUpdateInventoryButton(inventoryId=${inventory.inventoryId})}"
+ 			class="badge badge-pill badge-info p-2">Update</a>
+ 			
+ 			<a th:href="@{/htmlDeleteInventoryButton(inventoryId=${inventory.inventoryId})}"
+ 			class="badge badge-pill badge-danger p-2 ">Delete</a>
+ 		</td>
+ 	</tr>
+ 	</tbody>
+ 	</table>
+ 	<br>
+ 	<a th:href="@{/backhtmlAdminPageaction}" class="badge badge-pill badge-success p-2">Back to Administrator List</a>
+ 	</div>
+
+</body>
+</html>

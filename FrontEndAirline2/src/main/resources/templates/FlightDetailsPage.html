@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+</head>
+<body>
+	<div class="container col-6">
+		<h2 class="m-4">Flight Details list</h2>
+		<a th:href="@{/addFlightDetails}" class="btn btn-primary">Add Flight Info</a>
+		<table class="table table-striped">
+			<thead >
+				<tr>
+					<th>Id</th>
+					<th>Flight Number</th>
+					<th>Flight Type</th>
+					<th>AirInfo Id</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="flight: ${flightlist}">
+					<td th:text="${flight.flightinfoId}"></td>
+					<td th:text="${flight.flightNumber}"></td>
+					<td th:text="${flight.flightType}"></td>
+					<td th:text="${flight.airinfoId}"></td>
+					<td >
+						<a th:href="@{/htmlUpdateFlightlinkButton(flightId=${flight.flightinfoId})}"
+						class="badge-pill badge-success">Update</a>
+						
+						<a th:href="@{/htmlDeleteFlightlinkButton(flightId=${flight.flightinfoId})}"
+						class="badge-pill badge-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/backhtmlAdminPageaction}" class="badge badge-pill badge-success p-2">Back to Administrator List</a>
+	</div>
+
+</body>
+</html>

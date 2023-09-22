@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+	
+</head>
+<body>
+
+	<div class="container col-5 bg-secondary m-5">
+		<h1>Airline Management System</h1>
+		<hr>
+		<h2>Admin Login</h2>
+		
+		<form action="#" th:action="@{/htmlAdminPageaction}">
+			<input type="text" placeholder="admin" name="adminname" class="form-control ">
+			<br>
+			<input type="password" placeholder="123452" name="password" class="form-control">
+			<br>
+			<input type="submit" value="Login" class="btn btn-primary m-2">
+			<br>
+		<!--  	<p>If you don't have an account?<a href="/htmlRegisterlink">Register</a></p>
+			<p>This page is belong the administrator</p>
+			-->
+		</form>
+		
+		
+	</div>
+	
+	
+
+
+</body>
+</html>

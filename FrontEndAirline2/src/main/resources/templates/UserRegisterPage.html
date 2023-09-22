@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container col-4">
+		<form th:action="@{/userRegister}" th:object="${user}" method="post">
+			<label>First Name</label>
+			<input type="text" th:field="*{firstName}" class="form-control">
+			<label>Last Name</label>
+			<input type="text" th:field="*{lastName}" class="form-control">
+			<label>User Name</label>
+			<input type="email" th:field="*{userName}"class="form-control">
+			<label>Password</label>
+			<input type="password" th:field="*{password}"class="form-control">
+			<label>Mobile No</label>
+			<input type="text" th:field="*{mobileNo}" class="form-control">
+			<label>Gender</label>
+			<input type="radio" th:field="*{gender}" th:value="male">Male
+			<input type="radio" th:field="*{gender}" th:value="female">Female
+			<br>
+			<input type="submit" value="Register" class="btn btn-primary">
+		</form>
+	</div>
+</body>
+</html>

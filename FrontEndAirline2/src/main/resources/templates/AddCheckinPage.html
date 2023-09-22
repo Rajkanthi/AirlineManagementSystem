@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html xmlns="www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+	<div class="container col-4 bg-light">
+	<br>
+	<h3 class="text-center">Add Check in Details in database</h3>
+	<form th:action="@{/htmlSaveCheckinaction}" th:object="${checkin}" method="post">
+	<label class="font-weight-bold">Enter the Gate Number :</label>
+	<input type="text" placeholder="Enter the new Gate No" th:field="*{gateNo}" class="form-control m-2">
+	
+	<label class="font-weight-bold">Enter the Seat Number :</label>
+	<input type="text" placeholder="Enter the new Seat No" th:field="*{seatNo}" required class="form-control m-2">
+	
+	<input type="submit" value="save" class="btn btn-primary m-2">
+	<input type="hidden" th:field="*{checkinId}">
+	
+	</form>
+
+	</div>
+</body>
+</html>

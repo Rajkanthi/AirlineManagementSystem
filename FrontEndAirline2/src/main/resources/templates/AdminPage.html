@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Administrator</title>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container col-8">
+	<h2>Welcome to the Administration page</h2>
+	<hr>
+	<div class="lead m-1">
+		<a th:href="@{/htmlAirlineInfolink}" class="badge badge-pill badge-primary p-2">Airline Information</a>
+	</div>
+	<div class="lead m-1">
+		<a th:href="@{/htmlCheckinglink}" class="badge badge-pill badge-dark p-2">Checking Details</a>
+	</div>
+	<div class="lead m-1">
+		<a th:href="@{/htmlFlightDetailslink}" class="badge badge-pill badge-success p-2">Flight Details</a>
+	</div>
+	<div class="lead m-1">
+		<a th:href="@{/htmlFlightTravellink}" class="badge badge-pill badge-info p-2">Flight Travel Details</a>
+	</div>
+	<div class="lead m-1">
+		<a th:href="@{/htmlInventorylink}" class="badge badge-pill badge-warning p-2">Inventory Details</a>
+	</div>
+	<div class="lead m-1">
+		<a th:href="@{/htmlFareAmountlink}" class="badge badge-pill badge-dark p-2">Fare Amount Details</a>
+	</div>
+	</div>
+	<div class="container">
+	<hr>
+	<h2>List of the Flight Booking and Passengers</h2>
+	<hr>
+	<div class="lead m-1">
+		<a th:href="@{/htmlPassengerListlink}" class="badge badge-pill badge-light p-2">Passenger List</a>
+	</div>
+	<div class="lead m-1">
+		<a th:href="@{/htmlBookingListlink}" class="badge badge-pill badge-light p-2">Booking Details</a>
+	</div>
+	</div>
+	
+
+</body>
+</html>
